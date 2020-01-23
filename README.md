@@ -1,9 +1,9 @@
 # avrisp
 udev rules to use ATMEL programmers with AVRDUDE
 
-It tooke me some time digging how to make ubuntu recognize ATMEL-ICE and ATMEL AVRISP mkII until i finally got [here](http://steve.kargs.net/bacnet/avr-isp-mkii-on-ubuntu-hardy/), and [here](https://stackoverflow.com/questions/5412727/avrisp-mkii-doesnt-work-with-avrdude-on-linux). I'm saving the steps here for my personal configurations.
+It took me some time digging how to make ubuntu recognize ATMEL-ICE and ATMEL AVRISP mkII until I finally got [here](http://steve.kargs.net/bacnet/avr-isp-mkii-on-ubuntu-hardy/), and [here](https://stackoverflow.com/questions/5412727/avrisp-mkii-doesnt-work-with-avrdude-on-linux). I'm saving the steps here for my configurations.
 
-## Intalation
+## Installation
 Clone this repository
 ```
 $ git clone git@github.com:hd-faria/avrisp.git
@@ -14,12 +14,12 @@ Change directory to ./avrisp (assuming you are at the directory where you cloned
 $ cd ./avrisp 
 ```
 
-To check if your is on the list, plug in the USB cabe of you atmel programmer and in a terminal type:
+To check if your is on the list, plug in the USB cable of you Atmel programmer and type in a terminal:
 ```
 $ dmesg | grep 'idProduct'
 ```
 
-The last entry should have your devices idVendor and idProduct, now just verify if its listed in avrisp.rules:
+The last entry should have your devices idVendor and idProduct, now verify if it's listed in avrisp.rules:
 ```
 $ cat avrisp.rules
 ```
@@ -29,7 +29,7 @@ Create a symbolic link to /etc/udev/rules.d/
 $ sudo ln ./avrisp.rules /etc/udev/rules.d/60-avrisp.rules
 ```
 
-Make sure you are member of dialout group, it should be listed when you type:
+Make sure you are a member of the 'dialout' group. It should be listed when you type:
 ```
 $ groups
 ```
@@ -40,7 +40,7 @@ $ sudo service udev restart
 ```
 
 ## Use cases
-Tested using ATMEL-ICE to download the flash and eeprom content from an at90can64 uC.
+Tested using ATMEL-ICE to download the flash and EEPROM content from an at90can64 uC.
 ![ATMEL-ICE programer](./atmel-ice.jpg)
 
 ```
