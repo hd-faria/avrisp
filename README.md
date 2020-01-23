@@ -29,7 +29,7 @@ Create a symbolic link to /etc/udev/rules.d/
 $ sudo ln ./avrisp.rules /etc/udev/rules.d/60-avrisp.rules
 ```
 
-Make shure you are member of dialout group, it should be listed when you type:
+Make sure you are member of dialout group, it should be listed when you type:
 ```
 $ groups
 ```
